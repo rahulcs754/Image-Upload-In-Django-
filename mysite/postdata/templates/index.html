@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Index Page {% endblock %}
+
+{% block body %}
+
+<h2>Form Validation</h2>
+<form action="result" method="POST" class="was-validated" enctype="multipart/form-data"> 
+   {% csrf_token %}
+   <div class="form-group form-check">
+      <label for="picture">Select Image</label>
+      <input type="text" name='description' class="form-control-file border">
+    </div>
+    <div class="form-group form-check">
+      <label for="picture">Select Image</label>
+      <input type="file" name='picture' class="form-control-file border">
+    </div>
+
+  
+  <button type="submit" name="submitbutton" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
+
+{% block result %} 
+    {% for i in data %}
+    <div class="card col-3 inlin">
+      <div class="card-header">
+          <span>Title : <b> {{ i.name }} </b></span> .
+      </div>
+      <div class="card-body">
+          <img src="media/{{ i.picture }}" alt="picture" style="height: 200px; width: 200px;">
+      </div>
+    </div>
+    {% endfor %}
+{% endblock %}
