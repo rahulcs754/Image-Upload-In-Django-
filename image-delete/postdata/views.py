@@ -14,16 +14,19 @@ def index(request):
         if 'deleteimage' in request.POST:
             ''' Start delete image from database '''
             imageid = request.POST['deleteimage']
+
+            #delete image from media folder
+            imagedata = Profile.objects.filter(id=int(imageid))
+            # fs = FileSystemStorage()
+            # fs.delete('media/'+imagedata.picture)
+
             de = Profile.objects.get(id=int(imageid))
             de.delete()
-            #delete image from media folder
-            fs = FileSystemStorage()
-            fs.delete(de.picture)
-   
-            return redirect('/')
+           
+            return redirect('/',{'result':imagedata})
             ''' End code '''
 
-    return render(request, 'index.html',{'result':'delete data', 'data':alldata })
+    return render(request, 'index.html',{'data':alldata })
 
 #@csrf_protect
 def result(request):

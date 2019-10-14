@@ -22,6 +22,12 @@
 
 {% endblock %}
 
+<hr>
+{% for r in result %}
+  {{ r }}
+{% endfor %}
+<hr>
+
 {% block result %} 
     {% for i in data %}
     <div class="card col-3 inlin">
