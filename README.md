@@ -1,4 +1,4 @@
-<div align="center"><h1>  Djanog - Image upload scripts </h1> </div>
+<div align="center"><h1>  Django - Image upload scripts </h1> </div>
 <div align="center"> In this repo, I show you. How to upload image in django project app. </div>
 
 
