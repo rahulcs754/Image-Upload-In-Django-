@@ -1,6 +1,3 @@
-# Image-Upload-In-Django-
-This repo show you how to upload images 
-
 <div align="center"><h1>  Djanog - Image upload scripts </h1> </div>
 <div align="center"> In this repo, I show you. How to upload image in django project app. </div>
 
